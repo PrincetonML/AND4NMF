@@ -1,8 +1,8 @@
 This is the code for the paper "Provable Alternating Gradient Descent for Non-negative Matrix Factorization with Strong Correlations".
 
-The code consists of the following.
-
 1. Core code
+
+The code consists of the following.
 
 competiors.py is the code for the competior algorithms.
 AND.py is the code for the algorithm AND.
