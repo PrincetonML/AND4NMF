@@ -12,6 +12,8 @@ def softmax(x):
 
 def gen_cor_topic_vector(K, sigma=1.0):
     """Generate topic vectors"""
+
+    ''' #with larger sparsity
     mu = np.zeros(K)
     diag_Sigma = np.random.rand(K, K)
     off_Sigma = (np.random.rand(K, K) - 0.5) * sigma / K
@@ -19,7 +21,14 @@ def gen_cor_topic_vector(K, sigma=1.0):
     Sigma = diag_Sigma + off_Sigma
     logit = mu + np.dot(Sigma, np.random.randn(K))
     topics = softmax(logit)
-    print('max sig, off, topic: %.3f %.3f %.3f' % (np.max(np.diag(Sigma)), np.max(np.abs(off_Sigma)), max(topics)) )
+    #print('max sig, off, topic: %.3f %.3f %.3f' % (np.max(np.diag(Sigma)), np.max(np.abs(off_Sigma)), max(topics)) )
+    '''
+
+    mu = np.zeros(K)
+    C = np.random.randn(K, K)
+    Sigma = np.dot(C, C)
+    logit = mu + np.dot(Sigma, np.random.randn(K))
+    topics = softmax(logit)
 
     return topics
 
