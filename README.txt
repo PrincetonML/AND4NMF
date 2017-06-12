@@ -5,7 +5,8 @@ This is the code for the paper "Provable Alternating Gradient Descent for Non-ne
 The code consists of the following.
 
 competiors.py is the code for the competior algorithms.
-AND.py is the code for the algorithm AND.
+AND.py is the code for our algorithm AND (Alternative Non-negative gradient
+Descent).
 
 data_io.py is the code for loading/generating data.
 compute_error.py is the code for computing the error.
